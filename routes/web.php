@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // 通常のログ
+    Log::info('ログ');
+    // カスタムログ1に書き込み
+    Log::channel('custom1')->info('custom1');
+    Log::channel('custom1')->debug('!!!!!');
+    // カスタムログ2に書き込み
+    Log::channel('custom2')->info('custom2');
+    Log::channel('custom2')->debug('!!!!!');
+    echo 'ログを書きました';
+    exit;
 });

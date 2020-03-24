@@ -99,6 +99,21 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        // カスタムログ
+        'custom1' => [
+            'driver' => 'custom',
+            'via' => App\Logging\CreateCustom1Logger::class,
+            'path' => storage_path('logs/custom1.log'),
+            'level' => 'debug', 
+            'days' => 14,   
+        ],
+        'custom2' => [
+            'driver' => 'custom',
+            'via' => App\Logging\CreateCustom2Logger::class,
+            'path' => storage_path('logs/custom2.log'),
+            'level' => 'debug', 
+            'days' => 14,   
+        ],
     ],
 
 ];
